@@ -81,13 +81,15 @@ def register(username, password, check_password):
 
 answer = register('falone641234', '12345678qwe', '12345678qwe')
 
-print(guess)
+print(answer)
 
 def check_code(guess, answer):
     if answer == guess:
         print('Все успешно! Можете входить')
     else:
         print('Неверный код!')
+
+
 
 
 
