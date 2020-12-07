@@ -66,28 +66,6 @@
 #     print(list1[-1]) #программа не допускает ошибку и выводит последний элемент!
 
 
-def register(username, password, check_password):
-    if password == check_password:
-        if 8 < len(username) < 40 and 8 < len(password) < 14:
-            print('Регистриация прошла успешно!')
-            with open('database.txt', 'w') as db1:
-                db1.write(username+'\n'+password)
-            code = 1234
-            return code
-        else:
-            print('Неправильная длина!')
-    else:
-        print('Пароли не совпадают!')
-
-answer = register('falone641234', '12345678qwe', '12345678qwe')
-
-print(answer)
-
-def check_code(guess, answer):
-    if answer == guess:
-        print('Все успешно! Можете входить')
-    else:
-        print('Неверный код!')
 
 
 
