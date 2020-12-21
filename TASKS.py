@@ -190,6 +190,61 @@
 #         w_list.append(list1[i])
 # twenty_one(w_names2, len(w_names2))
 
+# from random import randint
+#
+# names = {'urmatik':0, 'beksich': 0, 'aziretich':0, 'businesswman':0, 'erjanchik':0, 'ataichik':0, 'rasulchik':0,
+#          'rusik':0, 'sanjarchik':0, 'saidchik':0}
+#
+# def twenty_one(names):
+#     while len(names) > 1:
+#         for i in names.copy().keys():
+#             if names[i] == 0:
+#                 names[i] = randint(2, 11) + randint(2, 11)
+#             print(f'{i} ochkov seichas {names[i]}')
+#             check = input('One more? да/нет')
+#             while check == 'да':
+#                 names[i] = randint(2, 11) + names[i]
+#                 if names[i] > 21:
+#                     print(f'{i} proigral s ochkami {names[i]}')
+#                     names.pop(i, None)
+#                     print('Оставшиеся:', names)
+#                     break
+#                 print(f'{i} seichas ochkov {names[i]}')
+#                 check = input('One more? да/нет')
+#
+# twenty_one(names)
+#
+# print(f'{next(iter(names))} viygral s ochkami {names[next(iter(names))]}')
+
+from random import randint
+
+names = {'urmatik': 0, 'beksich': 0, 'aziretich': 0, 'businesswman': 0, 'erjanchik': 0, 'ataichik': 0, 'rasulchik': 0,
+         'rusik': 0, 'sanjarchik': 0, 'saidchik': 0}
+
+
+def twenty_one(names):
+    while len(names) > 1:
+        for i in names.copy().keys():
+            if len(names) < 2:
+                break
+            if names[i] == 0:
+                names[i] = randint(2, 11) + randint(2, 11)
+            print(f'{i} ochkov seichas {names[i]}')
+            check = input('One more? да/нет')
+            while check == 'да':
+                names[i] = randint(2, 11) + names[i]
+                if names[i] > 21:
+                    print(f'{i} proigral s ochkami {names[i]}')
+                    names.pop(i, None)
+                    break
+                print(f'{i} seichas ochkov {names[i]}')
+                check = input('One more? да/нет')
+            print('Оставшиеся:', names)
+
+
+twenty_one(names)
+
+print(f'{next(iter(names))} viygral s ochkami {names[next(iter(names))]}')
 
 
 
